@@ -1,0 +1,8 @@
+C:\repository\RecoveryCoin\RecoveryCoin\bin\Debug\RecoveryCoin.exe.config
+C:\repository\RecoveryCoin\RecoveryCoin\bin\Debug\RecoveryCoin.exe
+C:\repository\RecoveryCoin\RecoveryCoin\bin\Debug\RecoveryCoin.pdb
+C:\repository\RecoveryCoin\RecoveryCoin\obj\Debug\RecoveryCoin.csprojResolveAssemblyReference.cache
+C:\repository\RecoveryCoin\RecoveryCoin\obj\Debug\RecoveryCoin.Properties.Resources.resources
+C:\repository\RecoveryCoin\RecoveryCoin\obj\Debug\RecoveryCoin.csproj.GenerateResource.Cache
+C:\repository\RecoveryCoin\RecoveryCoin\obj\Debug\RecoveryCoin.exe
+C:\repository\RecoveryCoin\RecoveryCoin\obj\Debug\RecoveryCoin.pdb
