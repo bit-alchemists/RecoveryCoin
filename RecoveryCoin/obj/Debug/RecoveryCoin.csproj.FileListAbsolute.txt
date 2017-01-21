@@ -6,3 +6,12 @@ C:\repository\RecoveryCoin\RecoveryCoin\obj\Debug\RecoveryCoin.Properties.Resour
 C:\repository\RecoveryCoin\RecoveryCoin\obj\Debug\RecoveryCoin.csproj.GenerateResource.Cache
 C:\repository\RecoveryCoin\RecoveryCoin\obj\Debug\RecoveryCoin.exe
 C:\repository\RecoveryCoin\RecoveryCoin\obj\Debug\RecoveryCoin.pdb
+C:\repository\RecoveryCoin\RecoveryCoin\obj\Debug\RecoveryCoin.frmMain.resources
+C:\repository\RecoveryCoin\RecoveryCoin\bin\Debug\BouncyCastle.Crypto.dll
+C:\repository\RecoveryCoin\RecoveryCoin\bin\Debug\RocksDbSharp.dll
+C:\repository\RecoveryCoin\RecoveryCoin\bin\Debug\RocksDbSharp.pdb
+C:\repository\RecoveryCoin\RecoveryCoin\bin\Debug\native\amd64\rocksdb.dll
+C:\repository\RecoveryCoin\RecoveryCoin\bin\Debug\native\amd64\librocksdb.so
+C:\repository\RecoveryCoin\RecoveryCoin\bin\Debug\native\amd64\librocksdb.dylib
+C:\repository\RecoveryCoin\RecoveryCoin\bin\Debug\native\i386\librocksdb.so
+C:\repository\RecoveryCoin\RecoveryCoin\bin\Debug\native\i386\librocksdb.dylib
