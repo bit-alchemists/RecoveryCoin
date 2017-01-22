@@ -23,7 +23,9 @@ namespace RecoveryCoin
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            Targets.Load(); Addresses.Load(); Hits.Load();
+            Targets.Load();
+            Addresses.Load(lstAddresses);
+            Hits.Load(lstHits);
             BigInteger targetCount = Targets.Count();
             lblTotalTargets.Text = targetCount.ToString();
             BigInteger oddsHit = new BigInteger("256").Pow(ECDSA.HIT_LENGTH).Divide(targetCount);
@@ -84,6 +86,7 @@ namespace RecoveryCoin
             }
             txtPrivateKey.Text = ByteOps.ByteToHex(address.privKey);
             txtAddress.Text = ByteOps.ByteToAddress(address.address);
+            lstAddresses.Items.Add(txtAddress.Text);
             Addresses.Database.Put(address.address, address.privKey);
             cmdGenerateNewAddress.Visible = true;
             cmdCancel.Visible = false;
@@ -133,6 +136,23 @@ namespace RecoveryCoin
                 return;
             }
             txtAddress.Text = ByteOps.ByteToAddress(loadedAddress.address);
+        }
+
+        private void lstAddresses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string addr = (string)lstAddresses.Items[lstAddresses.SelectedIndex];
+            byte[] address = ByteOps.AddressToBytes(addr);
+            byte[] privkey = Addresses.Database.Get(address);
+            txtPrivateKey.Text = ByteOps.ByteToHex(privkey);
+            txtAddress.Text = addr;
+        }
+
+        private void lstHits_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string priv = (string)lstHits.Items[lstHits.SelectedIndex];
+            byte[] privKey = ByteOps.HexToByte(priv);
+            byte[] pubKey = Hits.Database.Get(privKey);
+            lblHitPubKey.Text = ByteOps.ByteToHex(pubKey);
         }
     }
 }

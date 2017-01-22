@@ -44,12 +44,12 @@
             this.tabAddress = new System.Windows.Forms.TabPage();
             this.lblProgress = new System.Windows.Forms.Label();
             this.progGenerateAddress = new System.Windows.Forms.ProgressBar();
-            this.cmdGenerateNewAddress = new System.Windows.Forms.Button();
             this.txtLoadPrivateKey = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPrivateKey = new System.Windows.Forms.TextBox();
+            this.cmdGenerateNewAddress = new System.Windows.Forms.Button();
             this.cmdCancel = new System.Windows.Forms.Button();
             this.tabHash = new System.Windows.Forms.TabPage();
             this.cmdHash = new System.Windows.Forms.Button();
@@ -64,10 +64,15 @@
             this.tabTransactions = new System.Windows.Forms.TabPage();
             this.tabBlocks = new System.Windows.Forms.TabPage();
             this.tabAddresses = new System.Windows.Forms.TabPage();
+            this.lstAddresses = new System.Windows.Forms.ListBox();
+            this.tabNetwork = new System.Windows.Forms.TabPage();
+            this.lstHits = new System.Windows.Forms.ListBox();
+            this.lblHitPubKey = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.tabs.SuspendLayout();
             this.tabAddress.SuspendLayout();
             this.tabHash.SuspendLayout();
+            this.tabHits.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -84,7 +89,7 @@
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Location = new System.Drawing.Point(12, 347);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(531, 165);
+            this.groupBox3.Size = new System.Drawing.Size(473, 165);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Targets";
@@ -194,15 +199,17 @@
             this.tabs.Controls.Add(this.tabTransactions);
             this.tabs.Controls.Add(this.tabBlocks);
             this.tabs.Controls.Add(this.tabAddresses);
+            this.tabs.Controls.Add(this.tabNetwork);
             this.tabs.Location = new System.Drawing.Point(12, 12);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
-            this.tabs.Size = new System.Drawing.Size(535, 325);
+            this.tabs.Size = new System.Drawing.Size(477, 325);
             this.tabs.TabIndex = 18;
             // 
             // tabAddress
             // 
             this.tabAddress.BackColor = System.Drawing.SystemColors.Control;
+            this.tabAddress.Controls.Add(this.lstAddresses);
             this.tabAddress.Controls.Add(this.lblProgress);
             this.tabAddress.Controls.Add(this.progGenerateAddress);
             this.tabAddress.Controls.Add(this.txtLoadPrivateKey);
@@ -215,7 +222,7 @@
             this.tabAddress.Location = new System.Drawing.Point(4, 22);
             this.tabAddress.Name = "tabAddress";
             this.tabAddress.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAddress.Size = new System.Drawing.Size(527, 299);
+            this.tabAddress.Size = new System.Drawing.Size(469, 299);
             this.tabAddress.TabIndex = 0;
             this.tabAddress.Text = "Address";
             // 
@@ -234,21 +241,11 @@
             this.progGenerateAddress.Size = new System.Drawing.Size(274, 23);
             this.progGenerateAddress.TabIndex = 31;
             // 
-            // cmdGenerateNewAddress
-            // 
-            this.cmdGenerateNewAddress.Location = new System.Drawing.Point(366, 70);
-            this.cmdGenerateNewAddress.Name = "cmdGenerateNewAddress";
-            this.cmdGenerateNewAddress.Size = new System.Drawing.Size(78, 25);
-            this.cmdGenerateNewAddress.TabIndex = 29;
-            this.cmdGenerateNewAddress.Text = "Generate";
-            this.cmdGenerateNewAddress.UseVisualStyleBackColor = true;
-            this.cmdGenerateNewAddress.Click += new System.EventHandler(cmdGenerateNewAddress_Click);
-            // 
             // txtLoadPrivateKey
             // 
-            this.txtLoadPrivateKey.Location = new System.Drawing.Point(366, 18);
+            this.txtLoadPrivateKey.Location = new System.Drawing.Point(364, 18);
             this.txtLoadPrivateKey.Name = "txtLoadPrivateKey";
-            this.txtLoadPrivateKey.Size = new System.Drawing.Size(75, 22);
+            this.txtLoadPrivateKey.Size = new System.Drawing.Size(77, 22);
             this.txtLoadPrivateKey.TabIndex = 27;
             this.txtLoadPrivateKey.Text = "Load";
             this.txtLoadPrivateKey.UseVisualStyleBackColor = true;
@@ -287,16 +284,26 @@
             this.txtPrivateKey.Size = new System.Drawing.Size(274, 20);
             this.txtPrivateKey.TabIndex = 19;
             // 
+            // cmdGenerateNewAddress
+            // 
+            this.cmdGenerateNewAddress.Location = new System.Drawing.Point(365, 70);
+            this.cmdGenerateNewAddress.Name = "cmdGenerateNewAddress";
+            this.cmdGenerateNewAddress.Size = new System.Drawing.Size(77, 25);
+            this.cmdGenerateNewAddress.TabIndex = 29;
+            this.cmdGenerateNewAddress.Text = "Generate";
+            this.cmdGenerateNewAddress.UseVisualStyleBackColor = true;
+            this.cmdGenerateNewAddress.Click += new System.EventHandler(this.cmdGenerateNewAddress_Click);
+            // 
             // cmdCancel
             // 
-            this.cmdCancel.Location = new System.Drawing.Point(366, 69);
+            this.cmdCancel.Location = new System.Drawing.Point(364, 70);
             this.cmdCancel.Name = "cmdCancel";
             this.cmdCancel.Size = new System.Drawing.Size(78, 25);
             this.cmdCancel.TabIndex = 34;
             this.cmdCancel.Text = "Cancel";
             this.cmdCancel.UseVisualStyleBackColor = true;
             this.cmdCancel.Visible = false;
-            this.cmdCancel.Click += new System.EventHandler(cmdCancel_Click);
+            this.cmdCancel.Click += new System.EventHandler(this.cmdCancel_Click);
             // 
             // tabHash
             // 
@@ -322,7 +329,7 @@
             this.cmdHash.TabIndex = 27;
             this.cmdHash.Text = "Hash";
             this.cmdHash.UseVisualStyleBackColor = true;
-            this.cmdHash.Click += new System.EventHandler(cmdHash_Click);
+            this.cmdHash.Click += new System.EventHandler(this.cmdHash_Click);
             // 
             // label4
             // 
@@ -380,12 +387,14 @@
             // 
             // tabHits
             // 
+            this.tabHits.BackColor = System.Drawing.SystemColors.Control;
+            this.tabHits.Controls.Add(this.lblHitPubKey);
+            this.tabHits.Controls.Add(this.lstHits);
             this.tabHits.Location = new System.Drawing.Point(4, 22);
             this.tabHits.Name = "tabHits";
-            this.tabHits.Size = new System.Drawing.Size(527, 299);
+            this.tabHits.Size = new System.Drawing.Size(469, 299);
             this.tabHits.TabIndex = 3;
             this.tabHits.Text = "Hits";
-            this.tabHits.UseVisualStyleBackColor = true;
             // 
             // tabSend
             // 
@@ -423,11 +432,46 @@
             this.tabAddresses.Text = "Addresses";
             this.tabAddresses.UseVisualStyleBackColor = true;
             // 
+            // lstAddresses
+            // 
+            this.lstAddresses.FormattingEnabled = true;
+            this.lstAddresses.Location = new System.Drawing.Point(19, 113);
+            this.lstAddresses.Name = "lstAddresses";
+            this.lstAddresses.Size = new System.Drawing.Size(422, 95);
+            this.lstAddresses.TabIndex = 35;
+            this.lstAddresses.SelectedIndexChanged += new System.EventHandler(this.lstAddresses_SelectedIndexChanged);
+            // 
+            // tabNetwork
+            // 
+            this.tabNetwork.Location = new System.Drawing.Point(4, 22);
+            this.tabNetwork.Name = "tabNetwork";
+            this.tabNetwork.Size = new System.Drawing.Size(527, 299);
+            this.tabNetwork.TabIndex = 8;
+            this.tabNetwork.Text = "Network";
+            this.tabNetwork.UseVisualStyleBackColor = true;
+            // 
+            // lstHits
+            // 
+            this.lstHits.FormattingEnabled = true;
+            this.lstHits.Location = new System.Drawing.Point(16, 16);
+            this.lstHits.Name = "lstHits";
+            this.lstHits.Size = new System.Drawing.Size(430, 225);
+            this.lstHits.TabIndex = 20;
+            this.lstHits.SelectedIndexChanged += new System.EventHandler(this.lstHits_SelectedIndexChanged);
+            // 
+            // lblHitPubKey
+            // 
+            this.lblHitPubKey.AutoSize = true;
+            this.lblHitPubKey.Location = new System.Drawing.Point(13, 253);
+            this.lblHitPubKey.Name = "lblHitPubKey";
+            this.lblHitPubKey.Size = new System.Drawing.Size(0, 13);
+            this.lblHitPubKey.TabIndex = 21;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 524);
+            this.ClientSize = new System.Drawing.Size(499, 524);
             this.Controls.Add(this.tabs);
             this.Controls.Add(this.groupBox3);
             this.DoubleBuffered = true;
@@ -445,6 +489,8 @@
             this.tabAddress.PerformLayout();
             this.tabHash.ResumeLayout(false);
             this.tabHash.PerformLayout();
+            this.tabHits.ResumeLayout(false);
+            this.tabHits.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -485,6 +531,10 @@
         private System.Windows.Forms.TabPage tabTransactions;
         private System.Windows.Forms.TabPage tabBlocks;
         private System.Windows.Forms.TabPage tabAddresses;
+        private System.Windows.Forms.ListBox lstAddresses;
+        private System.Windows.Forms.TabPage tabNetwork;
+        private System.Windows.Forms.ListBox lstHits;
+        private System.Windows.Forms.Label lblHitPubKey;
     }
 }
 

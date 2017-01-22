@@ -14,12 +14,21 @@ namespace RecoveryCoin
     {
         public static RocksDb Database;
 
-        public static void Load()
+        public static void Load(ListBox listbox)
         {
             string path = Path.Combine(Application.StartupPath, "Hits");
             var options = new DbOptions();
             options.SetCreateIfMissing(true);
             Database = RocksDb.Open(options, path);
+            using (var iterator = Database.NewIterator(readOptions: new ReadOptions()))
+            {
+                iterator.SeekToFirst();
+                while (iterator.Valid())
+                {
+                    listbox.Items.Add(ByteOps.ByteToHex(iterator.Key()));
+                    iterator.Next();
+                }
+            }
         }
 
         public static BigInteger Count()

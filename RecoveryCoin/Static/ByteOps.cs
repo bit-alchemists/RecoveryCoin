@@ -38,6 +38,15 @@ namespace RecoveryCoin
             }
             return res;
         }
+        public static byte[] AddressToBytes(string addr)
+        {
+            byte[] res = new byte[ECDSA.ADDRESS_LENGTH];
+            for (int x = 0; x < addr.Length; x+=2)
+            {
+                res[x / 2] = Convert.ToByte(addr.Substring(x, 2));
+            }
+            return res;
+        }
 
         public static byte[] HexToByte(string HexString)
         {
