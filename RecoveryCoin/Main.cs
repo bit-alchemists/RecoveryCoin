@@ -26,6 +26,8 @@ namespace RecoveryCoin
             Targets.Load();
             Addresses.Load(lstAddresses);
             Hits.Load(lstHits);
+            totalHits = Hits.Count();
+            lblTotalHits.Text = totalHits.ToString();
             BigInteger targetCount = Targets.Count();
             lblTotalTargets.Text = targetCount.ToString();
             BigInteger oddsHit = new BigInteger("256").Pow(ECDSA.HIT_LENGTH).Divide(targetCount);
@@ -125,8 +127,9 @@ namespace RecoveryCoin
             lblProgress.Text = "";
         }
 
-        private void txtLoadPrivateKey_Click(object sender, EventArgs e)
+        private void cmdLoadPrivateKey_Click(object sender, EventArgs e)
         {
+            if (txtPrivateKey.Text == "") return;
             loadedAddress = new Address(ByteOps.HexToByte(txtPrivateKey.Text), AddressPerspective.PrivateKey);
             if (!loadedAddress.meetsTarget)
             {
@@ -136,6 +139,11 @@ namespace RecoveryCoin
                 return;
             }
             txtAddress.Text = ByteOps.ByteToAddress(loadedAddress.address);
+            if (Addresses.Database.Get(loadedAddress.address)==null)
+            {
+                lstAddresses.Items.Add(txtAddress.Text);
+                Addresses.Database.Put(loadedAddress.address, loadedAddress.privKey);
+            }
         }
 
         private void lstAddresses_SelectedIndexChanged(object sender, EventArgs e)

@@ -1,0 +1,165 @@
+2017/01/22-06:24:28.520996 2924 RocksDB version: 5.0.1
+2017/01/22-06:24:28.521200 2924 Git sha rocksdb_build_git_sha:@7a5cf2dbbbcaec0b7b208ea71302f34f91e81179@
+2017/01/22-06:24:28.521231 2924 Compile date Jan 10 2017
+2017/01/22-06:24:28.521250 2924 DB SUMMARY
+2017/01/22-06:24:28.521563 2924 CURRENT file:  CURRENT
+2017/01/22-06:24:28.521592 2924 IDENTITY file:  IDENTITY
+2017/01/22-06:24:28.521657 2924 MANIFEST file:  MANIFEST-000020 size: 116 Bytes
+2017/01/22-06:24:28.521681 2924 SST files in C:\repository\RecoveryCoin\RecoveryCoin\bin\Debug\Addresses dir, Total Num: 1, files: 000007.sst 
+2017/01/22-06:24:28.521701 2924 Write Ahead Log file in C:\repository\RecoveryCoin\RecoveryCoin\bin\Debug\Addresses: 000021.log size: 0 ; 
+2017/01/22-06:24:28.521720 2924                         Options.error_if_exists: 0
+2017/01/22-06:24:28.522062 2924                       Options.create_if_missing: 1
+2017/01/22-06:24:28.522078 2924                         Options.paranoid_checks: 1
+2017/01/22-06:24:28.522085 2924                                     Options.env: 00000204D7197130
+2017/01/22-06:24:28.522091 2924                                Options.info_log: 00000204D90AC670
+2017/01/22-06:24:28.522097 2924                          Options.max_open_files: -1
+2017/01/22-06:24:28.522103 2924                Options.max_file_opening_threads: 16
+2017/01/22-06:24:28.522109 2924                         Options.disableDataSync: 0
+2017/01/22-06:24:28.522115 2924                               Options.use_fsync: 0
+2017/01/22-06:24:28.522121 2924                       Options.max_log_file_size: 0
+2017/01/22-06:24:28.522127 2924                  Options.max_manifest_file_size: 18446744073709551615
+2017/01/22-06:24:28.522133 2924                   Options.log_file_time_to_roll: 0
+2017/01/22-06:24:28.522138 2924                       Options.keep_log_file_num: 1000
+2017/01/22-06:24:28.522144 2924                    Options.recycle_log_file_num: 0
+2017/01/22-06:24:28.522150 2924                         Options.allow_os_buffer: 1
+2017/01/22-06:24:28.522155 2924                        Options.allow_mmap_reads: 0
+2017/01/22-06:24:28.522161 2924                         Options.allow_fallocate: 1
+2017/01/22-06:24:28.522166 2924                       Options.allow_mmap_writes: 0
+2017/01/22-06:24:28.522172 2924                        Options.use_direct_reads: 0
+2017/01/22-06:24:28.522178 2924          Options.create_missing_column_families: 0
+2017/01/22-06:24:28.522183 2924                              Options.db_log_dir: 
+2017/01/22-06:24:28.522189 2924                                 Options.wal_dir: C:\repository\RecoveryCoin\RecoveryCoin\bin\Debug\Addresses
+2017/01/22-06:24:28.522195 2924                Options.table_cache_numshardbits: 6
+2017/01/22-06:24:28.522201 2924     Options.delete_obsolete_files_period_micros: 21600000000
+2017/01/22-06:24:28.522207 2924                      Options.max_subcompactions: 1
+2017/01/22-06:24:28.522212 2924                  Options.max_background_flushes: 1
+2017/01/22-06:24:28.522218 2924                         Options.WAL_ttl_seconds: 0
+2017/01/22-06:24:28.522224 2924                       Options.WAL_size_limit_MB: 0
+2017/01/22-06:24:28.522229 2924             Options.manifest_preallocation_size: 4194304
+2017/01/22-06:24:28.522235 2924                         Options.allow_os_buffer: 1
+2017/01/22-06:24:28.522241 2924                        Options.allow_mmap_reads: 0
+2017/01/22-06:24:28.522247 2924                       Options.allow_mmap_writes: 0
+2017/01/22-06:24:28.522252 2924                     Options.is_fd_close_on_exec: 1
+2017/01/22-06:24:28.522258 2924                   Options.stats_dump_period_sec: 600
+2017/01/22-06:24:28.522264 2924                   Options.advise_random_on_open: 1
+2017/01/22-06:24:28.522270 2924                    Options.db_write_buffer_size: 0
+2017/01/22-06:24:28.522275 2924         Options.access_hint_on_compaction_start: 1
+2017/01/22-06:24:28.522280 2924  Options.new_table_reader_for_compaction_inputs: 0
+2017/01/22-06:24:28.522286 2924               Options.compaction_readahead_size: 0
+2017/01/22-06:24:28.522329 2924           Options.random_access_max_buffer_size: 1048576
+2017/01/22-06:24:28.522341 2924           Options.writable_file_max_buffer_size: 1048576
+2017/01/22-06:24:28.522347 2924                      Options.use_adaptive_mutex: 0
+2017/01/22-06:24:28.522352 2924                            Options.rate_limiter: 0000000000000000
+2017/01/22-06:24:28.522358 2924     Options.sst_file_manager.rate_bytes_per_sec: 0
+2017/01/22-06:24:28.522364 2924                          Options.bytes_per_sync: 0
+2017/01/22-06:24:28.522369 2924                      Options.wal_bytes_per_sync: 0
+2017/01/22-06:24:28.522375 2924                       Options.wal_recovery_mode: 2
+2017/01/22-06:24:28.522381 2924                  Options.enable_thread_tracking: 0
+2017/01/22-06:24:28.522386 2924         Options.allow_concurrent_memtable_write: 1
+2017/01/22-06:24:28.522392 2924      Options.enable_write_thread_adaptive_yield: 1
+2017/01/22-06:24:28.522397 2924             Options.write_thread_max_yield_usec: 100
+2017/01/22-06:24:28.522403 2924            Options.write_thread_slow_yield_usec: 3
+2017/01/22-06:24:28.522408 2924                               Options.row_cache: None
+2017/01/22-06:24:28.522414 2924                              Options.wal_filter: None
+2017/01/22-06:24:28.522420 2924             Options.avoid_flush_during_recovery: 0
+2017/01/22-06:24:28.522425 2924             Options.base_background_compactions: 1
+2017/01/22-06:24:28.522431 2924             Options.max_background_compactions: 1
+2017/01/22-06:24:28.522437 2924             Options.avoid_flush_during_shutdown: 0
+2017/01/22-06:24:28.522442 2924             Options.delayed_write_rate : 2097152
+2017/01/22-06:24:28.522448 2924             Options.max_total_wal_size: 0
+2017/01/22-06:24:28.522453 2924 Compression algorithms supported:
+2017/01/22-06:24:28.522459 2924 	Snappy supported: 1
+2017/01/22-06:24:28.522464 2924 	Zlib supported: 0
+2017/01/22-06:24:28.522469 2924 	Bzip supported: 0
+2017/01/22-06:24:28.522476 2924 	LZ4 supported: 0
+2017/01/22-06:24:28.522481 2924 	ZSTD supported: 0
+2017/01/22-06:24:28.522487 2924 Fast CRC32 supported: 0
+2017/01/22-06:24:28.523091 2924 Recovering from manifest file: MANIFEST-000020
+2017/01/22-06:24:28.523248 2924 --------------- Options for column family [default]:
+2017/01/22-06:24:28.523262 2924               Options.comparator: leveldb.BytewiseComparator
+2017/01/22-06:24:28.523269 2924           Options.merge_operator: None
+2017/01/22-06:24:28.523274 2924        Options.compaction_filter: None
+2017/01/22-06:24:28.523280 2924        Options.compaction_filter_factory: None
+2017/01/22-06:24:28.523286 2924         Options.memtable_factory: SkipListFactory
+2017/01/22-06:24:28.523291 2924            Options.table_factory: BlockBasedTable
+2017/01/22-06:24:28.523323 2924            table_factory options:   flush_block_policy_factory: FlushBlockBySizePolicyFactory (00000204D71C8CE0)
+  cache_index_and_filter_blocks: 0
+  pin_l0_filter_and_index_blocks_in_cache: 0
+  index_type: 0
+  hash_index_allow_collision: 1
+  checksum: 1
+  no_block_cache: 0
+  block_cache: 00000204D719D350
+  block_cache_size: 8388608
+  block_cache_compressed: 0000000000000000
+  block_size: 4096
+  block_size_deviation: 10
+  block_restart_interval: 16
+  index_block_restart_interval: 1
+  filter_policy: nullptr
+  whole_key_filtering: 1
+  skip_table_builder_flush: 0
+  format_version: 2
+2017/01/22-06:24:28.523332 2924        Options.write_buffer_size: 67108864
+2017/01/22-06:24:28.523338 2924  Options.max_write_buffer_number: 2
+2017/01/22-06:24:28.523344 2924          Options.compression: Snappy
+2017/01/22-06:24:28.523350 2924                  Options.bottommost_compression: Disabled
+2017/01/22-06:24:28.523356 2924       Options.prefix_extractor: nullptr
+2017/01/22-06:24:28.523362 2924   Options.memtable_insert_with_hint_prefix_extractor: nullptr
+2017/01/22-06:24:28.523368 2924             Options.num_levels: 7
+2017/01/22-06:24:28.523373 2924        Options.min_write_buffer_number_to_merge: 1
+2017/01/22-06:24:28.523379 2924     Options.max_write_buffer_number_to_maintain: 0
+2017/01/22-06:24:28.523428 2924            Options.compression_opts.window_bits: -14
+2017/01/22-06:24:28.523440 2924                  Options.compression_opts.level: -1
+2017/01/22-06:24:28.523446 2924               Options.compression_opts.strategy: 0
+2017/01/22-06:24:28.523452 2924         Options.compression_opts.max_dict_bytes: 0
+2017/01/22-06:24:28.523457 2924      Options.level0_file_num_compaction_trigger: 4
+2017/01/22-06:24:28.523463 2924          Options.level0_slowdown_writes_trigger: 20
+2017/01/22-06:24:28.523469 2924              Options.level0_stop_writes_trigger: 32
+2017/01/22-06:24:28.523475 2924                   Options.target_file_size_base: 67108864
+2017/01/22-06:24:28.523482 2924             Options.target_file_size_multiplier: 1
+2017/01/22-06:24:28.523488 2924                Options.max_bytes_for_level_base: 268435456
+2017/01/22-06:24:28.523494 2924 Options.level_compaction_dynamic_level_bytes: 0
+2017/01/22-06:24:28.523499 2924          Options.max_bytes_for_level_multiplier: 10.000000
+2017/01/22-06:24:28.523510 2924 Options.max_bytes_for_level_multiplier_addtl[0]: 1
+2017/01/22-06:24:28.523516 2924 Options.max_bytes_for_level_multiplier_addtl[1]: 1
+2017/01/22-06:24:28.523522 2924 Options.max_bytes_for_level_multiplier_addtl[2]: 1
+2017/01/22-06:24:28.523528 2924 Options.max_bytes_for_level_multiplier_addtl[3]: 1
+2017/01/22-06:24:28.523534 2924 Options.max_bytes_for_level_multiplier_addtl[4]: 1
+2017/01/22-06:24:28.523539 2924 Options.max_bytes_for_level_multiplier_addtl[5]: 1
+2017/01/22-06:24:28.523545 2924 Options.max_bytes_for_level_multiplier_addtl[6]: 1
+2017/01/22-06:24:28.523551 2924       Options.max_sequential_skip_in_iterations: 8
+2017/01/22-06:24:28.523557 2924                    Options.max_compaction_bytes: 1677721600
+2017/01/22-06:24:28.523563 2924                        Options.arena_block_size: 8388608
+2017/01/22-06:24:28.523569 2924   Options.soft_pending_compaction_bytes_limit: 68719476736
+2017/01/22-06:24:28.523575 2924   Options.hard_pending_compaction_bytes_limit: 274877906944
+2017/01/22-06:24:28.523580 2924       Options.rate_limit_delay_max_milliseconds: 1000
+2017/01/22-06:24:28.523586 2924                Options.disable_auto_compactions: 0
+2017/01/22-06:24:28.523592 2924           Options.verify_checksums_in_compaction: 1
+2017/01/22-06:24:28.523597 2924                         Options.compaction_style: 0
+2017/01/22-06:24:28.523603 2924                           Options.compaction_pri: 0
+2017/01/22-06:24:28.523609 2924  Options.compaction_options_universal.size_ratio: 1
+2017/01/22-06:24:28.523619 2924 Options.compaction_options_universal.min_merge_width: 2
+2017/01/22-06:24:28.523626 2924 Options.compaction_options_universal.max_merge_width: 4294967295
+2017/01/22-06:24:28.523632 2924 Options.compaction_options_universal.max_size_amplification_percent: 200
+2017/01/22-06:24:28.523638 2924 Options.compaction_options_universal.compression_size_percent: -1
+2017/01/22-06:24:28.523644 2924 Options.compaction_options_fifo.max_table_files_size: 1073741824
+2017/01/22-06:24:28.523650 2924                   Options.table_properties_collectors: 
+2017/01/22-06:24:28.523655 2924                   Options.inplace_update_support: 0
+2017/01/22-06:24:28.523661 2924                 Options.inplace_update_num_locks: 10000
+2017/01/22-06:24:28.523667 2924               Options.min_partial_merge_operands: 2
+2017/01/22-06:24:28.523674 2924               Options.memtable_prefix_bloom_size_ratio: 0.000000
+2017/01/22-06:24:28.523681 2924   Options.memtable_huge_page_size: 0
+2017/01/22-06:24:28.523686 2924                           Options.bloom_locality: 0
+2017/01/22-06:24:28.523692 2924                    Options.max_successive_merges: 0
+2017/01/22-06:24:28.523698 2924                Options.optimize_filters_for_hits: 0
+2017/01/22-06:24:28.523751 2924                Options.paranoid_file_checks: 0
+2017/01/22-06:24:28.523761 2924                Options.force_consistency_checks: 0
+2017/01/22-06:24:28.523766 2924                Options.report_bg_io_stats: 0
+2017/01/22-06:24:28.628597 2924 Recovered from manifest file:C:\repository\RecoveryCoin\RecoveryCoin\bin\Debug\Addresses/MANIFEST-000020 succeeded,manifest_file_number is 20, next_file_number is 22, last_sequence is 2, log_number is 0,prev_log_number is 0,max_column_family is 0
+2017/01/22-06:24:28.628647 2924 Column family [default] (ID 0), log number is 19
+2017/01/22-06:24:28.628985 2924 EVENT_LOG_v1 {"time_micros": 1485059068628970, "job": 1, "event": "recovery_started", "log_files": [21]}
+2017/01/22-06:24:28.629003 2924 Recovering log #21 mode 2
+2017/01/22-06:24:28.629116 2924 Creating manifest 23
+2017/01/22-06:24:28.683493 2924 EVENT_LOG_v1 {"time_micros": 1485059068683480, "job": 1, "event": "recovery_finished"}
+2017/01/22-06:24:28.720813 2924 DB pointer 00000204DA3125F0

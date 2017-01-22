@@ -42,9 +42,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tabs = new System.Windows.Forms.TabControl();
             this.tabAddress = new System.Windows.Forms.TabPage();
+            this.lstAddresses = new System.Windows.Forms.ListBox();
             this.lblProgress = new System.Windows.Forms.Label();
             this.progGenerateAddress = new System.Windows.Forms.ProgressBar();
-            this.txtLoadPrivateKey = new System.Windows.Forms.Button();
+            this.cmdLoadPrivateKey = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -60,14 +61,13 @@
             this.txtHashInput = new System.Windows.Forms.TextBox();
             this.tabSign = new System.Windows.Forms.TabPage();
             this.tabHits = new System.Windows.Forms.TabPage();
+            this.lblHitPubKey = new System.Windows.Forms.Label();
+            this.lstHits = new System.Windows.Forms.ListBox();
             this.tabSend = new System.Windows.Forms.TabPage();
             this.tabTransactions = new System.Windows.Forms.TabPage();
             this.tabBlocks = new System.Windows.Forms.TabPage();
             this.tabAddresses = new System.Windows.Forms.TabPage();
-            this.lstAddresses = new System.Windows.Forms.ListBox();
             this.tabNetwork = new System.Windows.Forms.TabPage();
-            this.lstHits = new System.Windows.Forms.ListBox();
-            this.lblHitPubKey = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.tabs.SuspendLayout();
             this.tabAddress.SuspendLayout();
@@ -212,7 +212,7 @@
             this.tabAddress.Controls.Add(this.lstAddresses);
             this.tabAddress.Controls.Add(this.lblProgress);
             this.tabAddress.Controls.Add(this.progGenerateAddress);
-            this.tabAddress.Controls.Add(this.txtLoadPrivateKey);
+            this.tabAddress.Controls.Add(this.cmdLoadPrivateKey);
             this.tabAddress.Controls.Add(this.label2);
             this.tabAddress.Controls.Add(this.label1);
             this.tabAddress.Controls.Add(this.txtAddress);
@@ -225,6 +225,15 @@
             this.tabAddress.Size = new System.Drawing.Size(469, 299);
             this.tabAddress.TabIndex = 0;
             this.tabAddress.Text = "Address";
+            // 
+            // lstAddresses
+            // 
+            this.lstAddresses.FormattingEnabled = true;
+            this.lstAddresses.Location = new System.Drawing.Point(19, 113);
+            this.lstAddresses.Name = "lstAddresses";
+            this.lstAddresses.Size = new System.Drawing.Size(422, 95);
+            this.lstAddresses.TabIndex = 35;
+            this.lstAddresses.SelectedIndexChanged += new System.EventHandler(this.lstAddresses_SelectedIndexChanged);
             // 
             // lblProgress
             // 
@@ -241,14 +250,15 @@
             this.progGenerateAddress.Size = new System.Drawing.Size(274, 23);
             this.progGenerateAddress.TabIndex = 31;
             // 
-            // txtLoadPrivateKey
+            // cmdLoadPrivateKey
             // 
-            this.txtLoadPrivateKey.Location = new System.Drawing.Point(364, 18);
-            this.txtLoadPrivateKey.Name = "txtLoadPrivateKey";
-            this.txtLoadPrivateKey.Size = new System.Drawing.Size(77, 22);
-            this.txtLoadPrivateKey.TabIndex = 27;
-            this.txtLoadPrivateKey.Text = "Load";
-            this.txtLoadPrivateKey.UseVisualStyleBackColor = true;
+            this.cmdLoadPrivateKey.Location = new System.Drawing.Point(364, 18);
+            this.cmdLoadPrivateKey.Name = "cmdLoadPrivateKey";
+            this.cmdLoadPrivateKey.Size = new System.Drawing.Size(77, 22);
+            this.cmdLoadPrivateKey.TabIndex = 27;
+            this.cmdLoadPrivateKey.Text = "Load";
+            this.cmdLoadPrivateKey.UseVisualStyleBackColor = true;
+            this.cmdLoadPrivateKey.Click += new System.EventHandler(this.cmdLoadPrivateKey_Click);
             // 
             // label2
             // 
@@ -317,7 +327,7 @@
             this.tabHash.Location = new System.Drawing.Point(4, 22);
             this.tabHash.Name = "tabHash";
             this.tabHash.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHash.Size = new System.Drawing.Size(527, 299);
+            this.tabHash.Size = new System.Drawing.Size(469, 299);
             this.tabHash.TabIndex = 1;
             this.tabHash.Text = "Hash";
             // 
@@ -380,7 +390,7 @@
             // 
             this.tabSign.Location = new System.Drawing.Point(4, 22);
             this.tabSign.Name = "tabSign";
-            this.tabSign.Size = new System.Drawing.Size(527, 299);
+            this.tabSign.Size = new System.Drawing.Size(469, 299);
             this.tabSign.TabIndex = 2;
             this.tabSign.Text = "Sign";
             this.tabSign.UseVisualStyleBackColor = true;
@@ -396,11 +406,31 @@
             this.tabHits.TabIndex = 3;
             this.tabHits.Text = "Hits";
             // 
+            // lblHitPubKey
+            // 
+            this.lblHitPubKey.AutoSize = true;
+            this.lblHitPubKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.lblHitPubKey.Location = new System.Drawing.Point(13, 253);
+            this.lblHitPubKey.Name = "lblHitPubKey";
+            this.lblHitPubKey.Size = new System.Drawing.Size(0, 9);
+            this.lblHitPubKey.TabIndex = 21;
+            // 
+            // lstHits
+            // 
+            this.lstHits.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.lstHits.FormattingEnabled = true;
+            this.lstHits.ItemHeight = 9;
+            this.lstHits.Location = new System.Drawing.Point(16, 16);
+            this.lstHits.Name = "lstHits";
+            this.lstHits.Size = new System.Drawing.Size(430, 220);
+            this.lstHits.TabIndex = 20;
+            this.lstHits.SelectedIndexChanged += new System.EventHandler(this.lstHits_SelectedIndexChanged);
+            // 
             // tabSend
             // 
             this.tabSend.Location = new System.Drawing.Point(4, 22);
             this.tabSend.Name = "tabSend";
-            this.tabSend.Size = new System.Drawing.Size(527, 299);
+            this.tabSend.Size = new System.Drawing.Size(469, 299);
             this.tabSend.TabIndex = 4;
             this.tabSend.Text = "Send";
             this.tabSend.UseVisualStyleBackColor = true;
@@ -409,7 +439,7 @@
             // 
             this.tabTransactions.Location = new System.Drawing.Point(4, 22);
             this.tabTransactions.Name = "tabTransactions";
-            this.tabTransactions.Size = new System.Drawing.Size(527, 299);
+            this.tabTransactions.Size = new System.Drawing.Size(469, 299);
             this.tabTransactions.TabIndex = 5;
             this.tabTransactions.Text = "Transactions";
             this.tabTransactions.UseVisualStyleBackColor = true;
@@ -418,7 +448,7 @@
             // 
             this.tabBlocks.Location = new System.Drawing.Point(4, 22);
             this.tabBlocks.Name = "tabBlocks";
-            this.tabBlocks.Size = new System.Drawing.Size(527, 299);
+            this.tabBlocks.Size = new System.Drawing.Size(469, 299);
             this.tabBlocks.TabIndex = 6;
             this.tabBlocks.Text = "Blocks";
             this.tabBlocks.UseVisualStyleBackColor = true;
@@ -427,45 +457,19 @@
             // 
             this.tabAddresses.Location = new System.Drawing.Point(4, 22);
             this.tabAddresses.Name = "tabAddresses";
-            this.tabAddresses.Size = new System.Drawing.Size(527, 299);
+            this.tabAddresses.Size = new System.Drawing.Size(469, 299);
             this.tabAddresses.TabIndex = 7;
             this.tabAddresses.Text = "Addresses";
             this.tabAddresses.UseVisualStyleBackColor = true;
-            // 
-            // lstAddresses
-            // 
-            this.lstAddresses.FormattingEnabled = true;
-            this.lstAddresses.Location = new System.Drawing.Point(19, 113);
-            this.lstAddresses.Name = "lstAddresses";
-            this.lstAddresses.Size = new System.Drawing.Size(422, 95);
-            this.lstAddresses.TabIndex = 35;
-            this.lstAddresses.SelectedIndexChanged += new System.EventHandler(this.lstAddresses_SelectedIndexChanged);
             // 
             // tabNetwork
             // 
             this.tabNetwork.Location = new System.Drawing.Point(4, 22);
             this.tabNetwork.Name = "tabNetwork";
-            this.tabNetwork.Size = new System.Drawing.Size(527, 299);
+            this.tabNetwork.Size = new System.Drawing.Size(469, 299);
             this.tabNetwork.TabIndex = 8;
             this.tabNetwork.Text = "Network";
             this.tabNetwork.UseVisualStyleBackColor = true;
-            // 
-            // lstHits
-            // 
-            this.lstHits.FormattingEnabled = true;
-            this.lstHits.Location = new System.Drawing.Point(16, 16);
-            this.lstHits.Name = "lstHits";
-            this.lstHits.Size = new System.Drawing.Size(430, 225);
-            this.lstHits.TabIndex = 20;
-            this.lstHits.SelectedIndexChanged += new System.EventHandler(this.lstHits_SelectedIndexChanged);
-            // 
-            // lblHitPubKey
-            // 
-            this.lblHitPubKey.AutoSize = true;
-            this.lblHitPubKey.Location = new System.Drawing.Point(13, 253);
-            this.lblHitPubKey.Name = "lblHitPubKey";
-            this.lblHitPubKey.Size = new System.Drawing.Size(0, 13);
-            this.lblHitPubKey.TabIndex = 21;
             // 
             // frmMain
             // 
@@ -480,7 +484,7 @@
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RecoveryCoin Address Generator & ECDSA Hash Demonstration";
+            this.Text = "RecoveryCoin";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -512,7 +516,7 @@
         private System.Windows.Forms.Label lblProgress;
         private System.Windows.Forms.ProgressBar progGenerateAddress;
         private System.Windows.Forms.Button cmdGenerateNewAddress;
-        private System.Windows.Forms.Button txtLoadPrivateKey;
+        private System.Windows.Forms.Button cmdLoadPrivateKey;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAddress;
