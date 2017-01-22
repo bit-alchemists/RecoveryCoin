@@ -68,6 +68,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Static\ByteOps.cs" />
     <Compile Include="Static\ECDSA.cs" />
+    <Compile Include="Static\Addresses.cs" />
+    <Compile Include="Static\Hits.cs" />
     <Compile Include="Static\Targets.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

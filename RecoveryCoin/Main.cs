@@ -23,12 +23,12 @@ namespace RecoveryCoin
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            Targets.Load();
+            Targets.Load(); Addresses.Load(); Hits.Load();
             BigInteger targetCount = Targets.Count();
             lblTotalTargets.Text = targetCount.ToString();
-            BigInteger oddsHit = new BigInteger("256").Pow(8).Divide(targetCount);
+            BigInteger oddsHit = new BigInteger("256").Pow(ECDSA.HIT_LENGTH).Divide(targetCount);
             lblOddsHit.Text = "1 : " + oddsHit.ToString();
-            BigInteger oddsRecovery = new BigInteger("256").Pow(32).Divide(targetCount);
+            BigInteger oddsRecovery = new BigInteger("256").Pow(ECDSA.PRIVATE_KEY_LENGTH).Divide(targetCount);
             lblOddsRecovery.Text = "1 : " + oddsRecovery.ToString();
         }
 
@@ -84,6 +84,7 @@ namespace RecoveryCoin
             }
             txtPrivateKey.Text = ByteOps.ByteToHex(address.privKey);
             txtAddress.Text = ByteOps.ByteToAddress(address.address);
+            Addresses.Database.Put(address.address, address.privKey);
             cmdGenerateNewAddress.Visible = true;
             cmdCancel.Visible = false;
             lblProgress.Text = "";

@@ -105,6 +105,7 @@ namespace RecoveryCoin
                 byte[] tryHit = new byte[ECDSA.HIT_LENGTH];
                 Array.Copy(hashx, 0, tryHit, 0, ECDSA.HIT_LENGTH);
                 if (Targets.Database.Get(tryHit) != null) {
+                    Hits.Database.Put(nPrivKey.ToByteArrayUnsigned(), ecPubKey.GetEncoded());
                     if (Hit != null) Hit(this, null); 
                 }
             }

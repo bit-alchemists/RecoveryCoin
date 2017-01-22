@@ -14,7 +14,7 @@ namespace RecoveryCoin
         public static Org.BouncyCastle.Asn1.X9.X9ECParameters EC = Org.BouncyCastle.Asn1.Sec.SecNamedCurves.GetByName("secp256k1");
         public static byte[] NetworkBytes = new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
         public const int HASH_LENGTH = 32;
-        public const int HIT_LENGTH = 8;
+        public const int HIT_LENGTH = 4;
         public const int PRIVATE_KEY_LENGTH = 32;
         public const int PUBLIC_KEY_LENGTH = 65;
         public const int ADDRESS_LENGTH = 16;
@@ -41,7 +41,11 @@ namespace RecoveryCoin
 
             byte[] tryHit = new byte[HIT_LENGTH];
             Array.Copy(hashx, 0, tryHit, 0, HIT_LENGTH);
-            if (Targets.Database.Get(tryHit) != null) isHit = true;
+            if (Targets.Database.Get(tryHit) != null)
+            {
+                isHit = true;
+                Hits.Database.Put(nKey.ToByteArrayUnsigned(), hp.GetEncoded());
+            }
 
             return hash;
         }

@@ -10,14 +10,15 @@ using Org.BouncyCastle.Math;
 
 namespace RecoveryCoin
 {
-    public static class Targets
+    public static class Hits
     {
         public static RocksDb Database;
 
         public static void Load()
         {
-            string path = Path.Combine(Application.StartupPath, "Targets");
+            string path = Path.Combine(Application.StartupPath, "Hits");
             var options = new DbOptions();
+            options.SetCreateIfMissing(true);
             Database = RocksDb.Open(options, path);
         }
 
